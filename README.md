@@ -1,5 +1,6 @@
 # Curso de JavaScript
-![Logo de JavaScript](./src/assets/javascript-logo.svg)
+<img src="./src/assets/javascript-logo.svg" alt="Logo de JavaScript" width="30%" >
+
 
 "Curso de JavaScript: Fundamentos a Avanzado" es un repositorio que contiene todo el código fuente, ejemplos y ejercicios prácticos asociados a un curso completo de JavaScript. Este curso está diseñado para guiar a los estudiantes desde los conceptos básicos hasta las técnicas y patrones avanzados de programación en JavaScript.
 
