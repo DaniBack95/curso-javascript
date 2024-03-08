@@ -7,3 +7,4 @@
 A lo largo del curso, los estudiantes aprenderán a utilizar JavaScript para crear aplicaciones web interactivas, manipular el DOM, trabajar con eventos, realizar peticiones a APIs, y mucho más. El curso también cubre temas avanzados como programación orientada a objetos, funciones de orden superior, promesas, async/await, y módulos ES6.
 
 Este repositorio sirve como recurso complementario al curso, permitiendo a los estudiantes acceder al código y seguir los ejemplos a su propio ritmo. Además, el repositorio incluye ejercicios prácticos para reforzar los conceptos aprendidos y evaluar el progreso de los estudiantes.
+![alt text](<Captura desde 2024-03-08 14-29-29.png>)
