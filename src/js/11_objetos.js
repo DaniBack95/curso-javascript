@@ -1,6 +1,12 @@
 /* 
   Objetos:
-  Son un tipo de dato complejo o compuesto que almacena una colección de datos de manera desordenada, Esa estructura se forma a partir de algo llamado clave:valor las claves también son conocidas como keys y técnicamente como propiedades o atributos, Las claves son Variables que pueden almacenar datos primitivos o datos compuestos, puede ir desde un string, un número, un boolean, un array e incluso almacenar otros objetos, también pueden almacenar funciones, estas funciones dentro de un objeto se le denominan métodos, ya que ejecutan una acción específica.
+  Son un tipo de dato complejo o compuesto que almacena una colección de datos
+  de manera desordenada, Esa estructura se forma a partir de algo llamado
+  clave:valor las claves también son conocidas como keys y técnicamente como 
+  propiedades o atributos, Las claves son Variables que pueden almacenar datos 
+  primitivos o datos compuestos, puede ir desde un string, un número, un 
+  boolean, un array e incluso almacenar otros objetos, también pueden almacenar
+  funciones, estas funciones dentro de un objeto se le denominan métodos, ya que ejecutan una acción específica.
 */
 
 /* 
@@ -39,7 +45,8 @@
 
 /* 
   Accediendo a las propiedades de un objeto:
-  A través de la notación de punto, si ponemos el nombre de una propiedad que no es real del objeto devuelve undefined
+  A través de la notación de punto, si ponemos el nombre de una propiedad 
+  que no es real del objeto devuelve undefined
 */
 {
   console.log("***** Accediendo a las propiedades: notación de punto ****");
@@ -73,19 +80,24 @@
   console.log(user["namme"]);
   console.log(user[5]);
 
-  /* En la notacion de corchetes podemos usar palabras separadas por espacio */
+  /* En la notacion de corchetes podemos usar palabras 
+  separadas por espacio */
   user["ciudad de nacimiento"] = "Bogotá";
   console.log(user["ciudad de nacimiento"]);
   console.log(user);
 
-  /* También podemos asignar el identificador de la propiedad de un objeto a una variable y pasarla dentro de la notatión de corchetes */
+  /* También podemos asignar el identificador de la propiedad de 
+  un objeto a una variable y pasarla dentro de la notatión 
+  de corchetes */
   let prop = "namme";
   console.log(user[prop]);
 }
 
 /* 
   Operador in:
-  Es un operador que valida si una propiedad existe o no en ubjeto, este operador retorna un valor booleano, true o flase
+  Es un operador que valida si una propiedad existe o no 
+  en un objeto, este operador retorna un valor booleano, 
+  true o flase
 
   sintaxis: propiedad in objeto
   donde:
@@ -158,7 +170,11 @@
 
 /* 
   Métodos de un objeto:
-  En los objetos, las propiedades son variables que pueden almacenar cualquier tipo de dato, por lo cual también podemos almacenar funciones en estas propiedades a esas propiedades que contienen una función se le denominan métodos, ya que ejecutan una acción específica. 
+  En los objetos, las propiedades son variables que pueden 
+  almacenar cualquier tipo de dato, por lo cual también podemos 
+  almacenar funciones en estas propiedades a esas propiedades 
+  que contienen una función se le denominan métodos, ya que 
+  ejecutan una acción específica. 
 */
 {
   console.log("***** Métodos de un objeto ****");
