@@ -413,3 +413,27 @@ h2.innerHTML = "Operadores Js";
   console.log(namme)
   console.log(student)
 }
+/* 
+  Operador de encadenamiento opcional:
+  Este operador permite acceder a las propiedades
+  de un objeto sin tener que verificar explícitamente 
+  si cada propiedad existe
+*/
+{
+  let persona = {
+    nombre: 'Juan',
+    edad: 30,
+    direccion: {
+      calle: '123 Calle Principal',
+      ciudad: 'Bogotá',
+      pais: 'Colombia'
+    }
+  };
+  console.log("***** Operador de encadenamiento ******")
+  console.log(`let profesional = persona.studies.university ?? "Sin estudios universitarios"`)
+  console.log("Lo anterior nos devuelve: 12_operadores.js:433 Uncaught TypeError: Cannot read properties of undefined (reading 'university')")
+  console.log("Para evitar este error, usamos el operador de encadenamiento, así")
+  console.log(`let profesional = persona.studies?.university ?? "Sin estudios universitarios"`)
+  let profesional = persona.studies?.university ?? "Sin estudios universitarios"
+  console.log(profesional)
+}
