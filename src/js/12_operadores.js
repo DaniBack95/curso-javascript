@@ -143,61 +143,116 @@ h2.innerHTML = "Operadores Js";
 */
 {
   console.log("***** Operadores unarios *****");
-  let number = 3
+  let number = 3;
   console.log("Incremento(post-incremento)");
-  console.log(`n n++ n`)
-  console.log(number, number++, number)
+  console.log(`n n++ n`);
+  console.log(number, number++, number);
 }
 {
-  let number = 3
+  let number = 3;
   console.log("Incremento(pre-incremento)");
-  console.log(`n ++n n`)
-  console.log(number, ++number, number)
+  console.log(`n ++n n`);
+  console.log(number, ++number, number);
 }
 {
-  let number = 3
+  let number = 3;
   console.log("Decremento (post-decremento)");
-  console.log(`n n-- n`)
-  console.log(number, number--, number)
+  console.log(`n n-- n`);
+  console.log(number, number--, number);
 }
 {
-  let number = 3
+  let number = 3;
   console.log("Decremento (pre-decremento)");
-  console.log(`n --n n`)
-  console.log(number, --number, number)
+  console.log(`n --n n`);
+  console.log(number, --number, number);
 }
 
 /* Unario positivo */
 {
   console.log("Operador unario positivo +");
-  let n = -5
-  console.log("n = ", n)
-  console.log("n = ", +n)
+  let n = -5;
+  console.log("n = ", n);
+  console.log("n = ", +n);
 
-  let m = "33"
-  console.log("m = ", m)
-  console.log("m = ", +m)
-} 
+  let m = "33";
+  console.log("m = ", m);
+  console.log("m = ", +m);
+}
 
 /* Unario negativo */
 {
   console.log("Operador unario negativo -");
-  let n = 5
-  console.log("n = ", n)
-  console.log("n = ", -n)
+  let n = 5;
+  console.log("n = ", n);
+  console.log("n = ", -n);
 
-  let m = "33"
-  console.log("m = ", m)
-  console.log("m = ", -m)
-  console.log(n, "+", m, "=", n + m)
-  console.log(n, "+", m, "=", n + +m)
+  let m = "33";
+  console.log("m = ", m);
+  console.log("m = ", -m);
+  console.log(n, "+", m, "=", n + m);
+  console.log(n, "+", m, "=", n + +m);
 
-
-  let j = -9
-  console.log("j = ", j)
-  console.log("j = ", -j)
-} 
+  let j = -9;
+  console.log("j = ", j);
+  console.log("j = ", -j);
+}
 
 /* 
-  Operador typeof 
+  Operador typeof:
+  Es un operador que devuelve en forma de string 
+  el tipo de dato al que pertenece el valor que 
+  se le pasa: string, número, un objeto, una variable,
+  etc
 */
+{
+  console.log("***** Operador typeof *****");
+  console.log("numero =>", typeof 5);
+  const saludar = function () {
+    return `Hola programador`;
+  };
+  console.log("saludar() =>", typeof saludar());
+  console.log("saludar() =>", typeof saludar);
+  console.log("Boolean =>", typeof true);
+  console.log("Objeto =>", typeof {});
+  console.log("Undefined =>", typeof undefined);
+  console.log("Null =>", typeof null);
+  console.log("NaN =>", typeof NaN);
+  console.log("String =>", typeof "JavaScript");
+}
+
+/* 
+  Operadores lógicos:
+  Estos operdores evaluan una condición y retornan un 
+  valor boleano.
+    AND &&:
+      Retorna true si los dos valores operandos son
+      verdadero, falso en cualquier otro 
+      caso
+
+*/
+{
+  console.log("***** Operadores lógicos *****")
+  console.log("operador And (&&)")
+  let and = 3 > 2 &&  9 > 3
+  console.log("3 > 2 &&  9 > 3")
+  console.log(and)
+
+  /* si el primer valor es verdadero,
+  retorna el segundo valor */
+  console.log("3 && 9")
+  console.log(3 && 9)
+  console.log("9 && 3")
+  console.log(9 && 3)
+
+  /* 
+    And retorna el primer valor que encuentre 
+    como falso, despué de eso, no demás operandos
+    son ignorados
+  */
+  console.log("null && 1")
+  console.log(null && 1)
+  console.log("1 && undefined")
+  console.log(1 && undefined)
+  console.log(" '' && undefined ")
+  console.log('' && undefined )
+}
