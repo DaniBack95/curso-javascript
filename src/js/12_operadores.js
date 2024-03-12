@@ -231,28 +231,185 @@ h2.innerHTML = "Operadores Js";
 
 */
 {
-  console.log("***** Operadores lógicos *****")
-  console.log("operador And (&&)")
-  let and = 3 > 2 &&  9 > 3
-  console.log("3 > 2 &&  9 > 3")
-  console.log(and)
+  console.log("***** Operadores lógicos *****");
+  console.log("operador And (&&)");
+  let and = 3 > 2 && 9 > 3;
+  console.log("3 > 2 &&  9 > 3");
+  console.log(and);
 
   /* si el primer valor es verdadero,
   retorna el segundo valor */
-  console.log("3 && 9")
-  console.log(3 && 9)
-  console.log("9 && 3")
-  console.log(9 && 3)
+  console.log("3 && 9");
+  console.log(3 && 9);
+  console.log("9 && 3");
+  console.log(9 && 3);
 
   /* 
     And retorna el primer valor que encuentre 
     como falso, despué de eso, no demás operandos
     son ignorados
   */
-  console.log("null && 1")
-  console.log(null && 1)
-  console.log("1 && undefined")
-  console.log(1 && undefined)
-  console.log(" '' && undefined ")
-  console.log('' && undefined )
+  console.log("null && 1");
+  console.log(null && 1);
+  console.log("1 && undefined");
+  console.log(1 && undefined);
+  console.log(" '' && undefined ");
+  console.log("" && undefined);
+}
+
+/* 
+  OR: 
+  Evalua una condición, devuelve verdadero si al menos
+  uno de los valores de los operandos es verdadero o falso
+  si los valores de todos los operandos evaludos son falsos
+*/
+{
+  console.log("operador OR (||)");
+  let or = 3 > 2 || 9 > 3;
+  console.log("3 > 2 ||  9 > 3");
+  console.log(or);
+  console.log("3 > 2 ||  9 < 3");
+  console.log(3 > 2 || 9 < 3);
+  console.log("3 < 2 ||  9 < 3");
+  console.log(3 < 2 || 9 < 3);
+
+  /* 
+    Si el primer operando es verdadero (true):
+
+    Se devuelve el valor del primer operando, 
+    sin evaluar el segundo operando, ya que no es necesario.
+    esto se debe a que en una operación or, si uno de
+    los operandos es verdadero, entonces el resultado 
+    será verdadero, independientemente del valor del otro operando.
+
+    Si el primer operando es falso (false):
+
+    Se evalúa y devuelve el valor del segundo operando.
+    Si el segundo operando también es falso, 
+    se devuelve el valor del segundo operando.
+  */
+
+  console.log("1 || 0");
+  console.log(1 || 0);
+  console.log("0 || 1");
+  console.log(0 || 1);
+  console.log("null || 0");
+  console.log(null || 0);
+  console.log("0 || null");
+  console.log(0 || null);
+  console.log("0 || null || undefined");
+  console.log(0 || null || undefined);
+  console.log("undefined || null || 0 ");
+  console.log(undefined || null || 0);
+}
+
+/* 
+  Operador NOT !:
+  Oprador unario que se usa para negar un valor, 
+  es decir invierte el valor del operando, 
+  si el valor es falso y se le aplica este operador
+  su valor pasa a ser verdadero
+*/
+{
+  console.log("operador NOT (!)");
+  console.log("!false");
+  console.log(!false);
+  console.log("!true");
+  console.log(!true);
+  console.log("!null");
+  console.log(!null);
+  console.log("!0");
+  console.log(!0);
+  console.log("!''");
+  console.log(!"");
+  console.log("!'cat'");
+  console.log(!"cat");
+}
+
+/* 
+  Operador ternario:
+  es un operador condicional, tiene 3 operandos,
+  es como la versión compacta o corta del condicional
+  if
+*/
+{
+  console.log("***** Operador condicional: ternario ? :*****");
+  const isLoguin = false;
+  let user = isLoguin ? "Usuario" : "Invitado";
+  console.log(user);
+
+  const num = 3;
+  const msj = num > 0 ? "Positivo" : "Negativo";
+  console.log('const msj = num > 0 ? "Positivo" : "Negativo"');
+  console.log("El número es:", msj);
+
+  console.log("***** Obtener el tipo de dato con operador ternario *****");
+  function getDataType(value) {
+    return typeof value === "number"
+      ? "Es un Número"
+      : typeof value === "string"
+      ? "Es un String"
+      : typeof value === "boolean"
+      ? "Es un Booleano"
+      : "Es otro tipo de dato";
+  }
+
+  let dataType = getDataType(2024);
+  console.log(dataType);
+}
+/* 
+  Operador de asignación lógica nula:
+  Es un operador que se usa para asignar un valor a una
+  variable solo si esta varible tine como valor null 
+  o undefined
+*/
+{
+  console.log("***** Operador de asignacion lógica nula *****");
+
+  let edad;
+  console.log("Edad => ", edad);
+  edad ??= 20;
+  console.log("edad ??= 20");
+  console.log("Edad => ", edad);
+
+  let nombre = "Jorge";
+  console.log("nombre =>", nombre);
+  nombre ??= "Usuario desconocido";
+  console.log('nombre ??= "Usuario desconocido"');
+  console.log("nombre =>", nombre);
+
+  function configPlayer(options) {
+    options.life ??= 100;
+    options.speed ??= 25;
+    options.level ??= 1;
+    return options;
+  }
+
+  const viewOptions = configPlayer({ level: 5 });
+  console.log(viewOptions);
+}
+
+/* 
+  Operador coalesciente null:
+  Este operador es útil cuando se desea asignar un valor 
+  predeterminado a una variable si la variable original 
+  es null o undefined.
+*/
+{
+  let firstName = null;
+  let lastName = null;
+  let nickName = "Supercode";
+  console.log(firstName ?? lastName ?? nickName ?? "Anonymus");
+
+  const user = {
+    namme: "Andrés",
+    age: "23",
+    email: "andrea@gmail.com",
+    hobbies: ["Leer", "Cocinar", "Viajar"],
+  };
+
+  let namme = user.namme ?? "Desconocido"
+  let student = user.student ?? "Pendiente"
+  console.log(namme)
+  console.log(student)
 }
