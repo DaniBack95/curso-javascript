@@ -79,7 +79,7 @@ podemos asignarle un valor que no sea undefined
 
 {
   console.log(
-    "****** Desestructuración de objeto con valores predeterminados *****"
+    "****** Desestructuración de objeto con valores predeterminados: *****"
   );
   const persona = {
     nombre: "Juan",
