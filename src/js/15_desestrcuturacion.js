@@ -14,12 +14,12 @@
 }
 
 {
-  console.log("Intercambio de valor usando desestructuración");
+  console.log("Intercambio de valor con desestructuración");
   let fruit1 = "manazana";
   let fruit2 = "kiwi";
-  console.log(`fruta 1 = ${fruit1}, fruta 2 = ${fruit2}`);
-  [fruit2, fruit1] = [fruit1, fruit2];
-  console.log(`fruta 1 = ${fruit1}, fruta 2 = ${fruit2}`);
+  console.log(fruit1, fruit2);
+  [fruit1, fruit2] = [fruit2, fruit1];
+  console.log(fruit1, fruit2);
 }
 
 {
@@ -70,24 +70,21 @@ podemos asignarle un valor que no sea undefined
     nombre: "Juan",
     edad: 25,
   };
-  const { nombre: namme, edad: age, ciudad: city} = persona;
+  const { nombre: namme, edad: age, ciudad: city } = persona;
   console.log("namme:", namme);
   console.log("age:", age);
-  console.log("sin valor predeterminado")
+  console.log("sin valor predeterminado");
   console.log("city:", city);
 }
 
 {
-  console.log(
-    "****** Desestructuración de objeto con valores predeterminados: *****"
-  );
   const persona = {
     nombre: "Juan",
     edad: 25,
   };
-  const { nombre: namme, edad: age, ciudad: city = "desconocida"} = persona;
+  const { nombre: namme, edad: age, ciudad: city = "desconocida" } = persona;
   console.log("namme:", namme);
   console.log("age:", age);
-  console.log("con valor predeterminado")
+  console.log("con valor predeterminado");
   console.log("city:", city);
 }
