@@ -1,6 +1,6 @@
 /* 
   Métodos estáticos:
-  son métodos que se pued ejecutar desde la clase, 
+  son métodos que se pueden ejecutar desde la clase, 
   sin necesidad de instanciar o crear un objeto
 */
 
