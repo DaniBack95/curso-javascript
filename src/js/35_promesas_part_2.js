@@ -1,4 +1,4 @@
-const verificarDisponibilidad = (nombreProducto) => {
+const verificarExistencia = (nombreProducto) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       const producto = productos.find(
@@ -9,17 +9,33 @@ const verificarDisponibilidad = (nombreProducto) => {
       } else {
         return reject(new Error(`${nombreProducto}: Producto no econtrado`));
       }
-    }, 2000);
+    }, 1500);
   });
 };
 
-const comprar = (cantidad, disponible, valor) => {
+const verificarDisponibilidad = (producto) => {
+  return new Promise((resolve, reject) => {
+    const {cantidadDisponible} = producto
+    setTimeout(()=>{
+      if(cantidadDisponible > 0) {
+        resolve(producto)
+      } else {
+        reject('Producto no disponible: existencias agotadas')
+      }
+    }, 1000)
+  })
+}
+
+const comprar = (cantidadSeleccionada, disponible, valor) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      if (cantidad > disponible) {
-        return reject(new Error("La cantidad seleccionada no está disponible"));
+      if (cantidadSeleccionada > disponible) {
+        return reject(new Error(`La cantidad seleccionada no está disponible, existencias disponibles: ${disponible} unidades`,));
       } else {
-        return resolve({ valorTotal: valor * cantidad, cantidad });
+        return resolve({
+          valorTotal: valor * cantidadSeleccionada,
+          cantidadSeleccionada,
+        });
       }
     }, 1000);
   });
@@ -28,7 +44,7 @@ const comprar = (cantidad, disponible, valor) => {
 const productos = [
   {
     nombre: "iPhone 14 Pro Max",
-    cantidadDisponible: 1,
+    cantidadDisponible: 5,
     descripcion:
       "El último teléfono insignia de Apple, con un potente chip A16 Bionic, una impresionante pantalla Super Retina XDR y un sistema de cámara increíble.",
     precio: 5719000,
@@ -63,7 +79,7 @@ const productos = [
   },
 ];
 
-verificarDisponibilidad("iPhone 14 Pro Max")
+/* verificarDisponibilidad("iPhone 14 Pro Max")
   .then(({ nombre, cantidadDisponible, precio }) => {
     if (cantidadDisponible > 0) {
       console.log("Producto disponible");
@@ -82,4 +98,26 @@ verificarDisponibilidad("iPhone 14 Pro Max")
       console.log("Producto no disponible, existencias agotadas");
     }
   })
-  .catch((err) => console.log(err));
+  .catch((err) => console.log(err)); */
+verificarExistencia("iPhone 14 Pro Max")
+  .then((producto) => {
+    const {nombre, precio, descripcion} = producto
+    console.log(nombre)
+    console.log(precio)
+    console.log(descripcion)
+    return verificarDisponibilidad(producto)
+  })
+  .then((producto) => {
+    const {cantidadDisponible, precio} = producto
+    console.log('En stock:', cantidadDisponible, 'unidades')
+    return comprar(2, cantidadDisponible, precio )
+  })
+  .then(res => {
+    const {cantidadSeleccionada, valorTotal} = res
+    console.log('Unidades seleccionadas:', cantidadSeleccionada)
+    console.log('Valor a pagar: $', valorTotal, 'COP')
+  })
+  .catch(err => {
+    console.log(err)
+  })
+    
