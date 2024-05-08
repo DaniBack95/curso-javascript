@@ -7,6 +7,7 @@
     completo, mejorando la experiencia del usuario y la eficiencia.
 */
 const api = "https://jsonplaceholder.typicode.com/users";
+const apiLocal = "./js/43_data.json"
 const apiDummi = "http://direccion.invalida";
 let json = null;
 const getData = (url) => {
